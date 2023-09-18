@@ -23,8 +23,10 @@ func main() {
 		},
 	}
 
-	jimPointer := &jim
-	jimPointer.updateName("Jimmy")
+	// Shortcut for below
+	// jimPointer := &jim
+	// jimPointer.updateName("Jimmy")
+	jim.updateName("Jimmy")
 	jim.print()
 }
 
@@ -32,6 +34,6 @@ func (pointerToPerson *person) updateName(newFirstName string) {
 	(pointerToPerson).firstName = newFirstName
 }
 
-func (p person) print() {
-	fmt.Printf("%+v", p)
+func (pointerToPerson *person) print() {
+	fmt.Printf("%+v", *pointerToPerson)
 }
