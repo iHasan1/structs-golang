@@ -2,19 +2,26 @@ package main
 
 import "fmt"
 
+type contactInfo struct {
+	email string
+	zipCode int
+}
+
 type person struct {
 	firstName string
 	lastName  string
+	contact contactInfo
 }
 
 func main() {
-	// alex := person{"Alex", "Anderson"} // Option 1 for declaring structs
-	// alex := person{firstName: "Alex", lastName: "Anderson"} // Option 2 of declaring structs
-	var alex person // Option 3 of declaring structs
+	jim := person{
+		firstName: "Jim",
+		lastName: "Party",
+		contact: contactInfo{
+			email: "jim@example.com",
+			zipCode: 94000,
+		},
+	}
 
-	alex.firstName = "Alex"
-	alex.lastName = "Anderson"
-
-	fmt.Println(alex)
-	fmt.Printf("%+v", alex)
+	fmt.Printf("%+v", jim)
 }
